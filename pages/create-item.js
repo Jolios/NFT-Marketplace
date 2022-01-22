@@ -15,7 +15,7 @@ import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 
 export default function CreateItem() {
   const [fileUrl, setFileUrl] = useState(null)
-  const [formInput, updateFormInput] = useState({ price: '', name: '', description: '' })
+  const [formInput, updateFormInput] = useState({ price: '', name: '', description: '',rightsPrice: '' })
   const router = useRouter()
 
   async function onChange(e) {
@@ -34,8 +34,8 @@ export default function CreateItem() {
     }  
   }
   async function createMarket() {
-    const { name, description, price } = formInput
-    if (!name || !description || !price || !fileUrl) return
+    const { name, description, price,rightsPrice } = formInput
+    if (!name || !description || !price || !fileUrl || !rightsPrice) return
     /* first, upload to IPFS */
     const data = JSON.stringify({
       name, description, image: fileUrl
@@ -63,17 +63,19 @@ export default function CreateItem() {
     let event = tx.events[0]
     let value = event.args[2]
     let tokenId = value.toNumber()
-
+    
     const price = ethers.utils.parseUnits(formInput.price, 'ether')
-  
+    const rightsPrice = ethers.utils.parseUnits(formInput.rightsPrice, 'ether')
+
+    
     /* then list the item for sale on the marketplace */
     contract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
     let listingPrice = await contract.getListingPrice()
     listingPrice = listingPrice.toString()
 
-    transaction = await contract.createMarketItem(nftaddress, tokenId, price, { value: listingPrice })
+    transaction = await contract.createMarketItem(nftaddress, tokenId, price, rightsPrice, { value: listingPrice })
     await transaction.wait()
-    router.push('/')
+    router.push('/my-assets')
   }
 
   return (
@@ -93,6 +95,11 @@ export default function CreateItem() {
           placeholder="Asset Price in Eth"
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+        />
+        <input
+          placeholder="Asset Rights Price in Eth"
+          className="mt-2 border rounded p-4"
+          onChange={e => updateFormInput({ ...formInput, rightsPrice: e.target.value })}
         />
         <input
           type="file"

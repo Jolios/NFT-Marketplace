@@ -54,6 +54,12 @@
 						"internalType": "uint256",
 						"name": "price",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rightsPrice",
+						"type": "uint256"
 					}
 				],
 				"name": "MarketItemCreated",
@@ -160,6 +166,73 @@
 				"type": "event"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "nftContract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rightsPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "RightsSold",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "rightsHolder",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "addNft",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -174,6 +247,11 @@
 					{
 						"internalType": "uint256",
 						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "rightsPrice",
 						"type": "uint256"
 					}
 				],
@@ -196,6 +274,19 @@
 					}
 				],
 				"name": "createMarketSale",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					}
+				],
+				"name": "createRightsSale",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
@@ -245,6 +336,11 @@
 							{
 								"internalType": "uint256",
 								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rightsPrice",
 								"type": "uint256"
 							},
 							{
@@ -303,6 +399,11 @@
 								"type": "uint256"
 							},
 							{
+								"internalType": "uint256",
+								"name": "rightsPrice",
+								"type": "uint256"
+							},
+							{
 								"internalType": "bool",
 								"name": "sold",
 								"type": "bool"
@@ -355,6 +456,71 @@
 							{
 								"internalType": "uint256",
 								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rightsPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "sold",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Market.MarketItem[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fetchNfts",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "itemId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "nftContract",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address payable",
+								"name": "creator",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "address payable",
+								"name": "owner",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rightsPrice",
 								"type": "uint256"
 							},
 							{
@@ -416,6 +582,11 @@
 							{
 								"internalType": "uint256",
 								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "rightsPrice",
 								"type": "uint256"
 							},
 							{
@@ -611,11 +782,11 @@
 			]
 		},
 		"Market.sol": {
-			"keccak256": "0x13aea3526bba31617443038df7d0cb601346223f6712fc31277ccd705f98381e",
+			"keccak256": "0xb815d2b9b08678255698f7ffebc7485ed80c793fe67e9178c46563859cbafbdb",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://38210b51a800b2c882697b81c8edf6e1afe2ddcc6dd91c1e38dce623b48a9c86",
-				"dweb:/ipfs/QmYNNeNsY1E9cA5oLF7Cj8eeDXuE6SReR9b19Gq2bqRuXX"
+				"bzz-raw://c54e792f7696b9d031032dd610f77ae5cef3e72142494efab27953e8e70cd514",
+				"dweb:/ipfs/QmSGasByP6VRvp1sCLh8aSb4GPWnxrYk7ATzY37gNHg2ET"
 			]
 		},
 		"NFT.sol": {
