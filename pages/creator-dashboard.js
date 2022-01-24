@@ -28,7 +28,7 @@ export default function CreatorDashboard() {
       
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
-    const data = await marketContract.fetchItemsCreated()
+    const data = await marketContract.fetchAuthorsCreations(signer.getAddress())
     
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)

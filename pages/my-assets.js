@@ -111,6 +111,11 @@ export default function MyAssets() {
       signer
     );
     const listingPrice = await marketContract.getListingPrice();
+    console.log(nftaddress)
+    console.log(id)
+    console.log(ethers.utils.parseUnits(price, "ether"))
+
+
     const tx = await marketContract.putItemToResell(
       nftaddress,
       id,
