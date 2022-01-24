@@ -552,11 +552,11 @@
 			]
 		},
 		"NFT.sol": {
-			"keccak256": "0x2de968fe7dc83891c77c856ffb4bcd59ccee646b2d2a7e6946febbb260922863",
+			"keccak256": "0x299db231eb4223273fed0e05998319dbe28c667ba7dc0d2f13b14a7796af69d3",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://df93c933c6805ccedcc8c13452a94ba93a2cac32b8538b5093873848288643c4",
-				"dweb:/ipfs/QmeG2gsnZDnQcUY2PpoipXbquf7aRori4atUMJsSTrdvP5"
+				"bzz-raw://58267a94bf5fe063ecbe733f5a2319c17cfc81dd81a9d17af7a83ee168d85c4d",
+				"dweb:/ipfs/QmZMBAjPkEnJxrvoMpqz2fqJuk5F9JiEmGJijafqLZ7hu2"
 			]
 		}
 	},
