@@ -30,7 +30,6 @@ export default function Home() {
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
     const data = await marketContract.fetchMarketItems()
-    
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
       const meta = await axios.get(tokenUri)
@@ -100,7 +99,7 @@ export default function Home() {
                   <p className="text-2xl mb-4 font-bold text-white">Asset price: {nft.price} ETH</p>
                   <p className="text-2xl mb-4 font-bold text-white">Asset rights price: {nft.rightsPrice} ETH</p>
                   <div style={{display : 'flex' }}>
-                    {!i.sold && <button className="w-full bg-blue-500 text-white font-bold py-2 px-12 mr-4 rounded" onClick={() => buyNft(nft)}>Buy</button>}
+                    {!nft.sold && <button className="w-full bg-blue-500 text-white font-bold py-2 px-12 mr-4 rounded" onClick={() => buyNft(nft)}>Buy</button>}
                     <button className="w-full bg-blue-500 text-white font-bold py-2 px-12 rounded" onClick={() => buyNftRights(nft)}>Buy Rights</button>
                   </div>
                 </div>

@@ -223,6 +223,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "payRoyalties",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -545,11 +552,11 @@
 			]
 		},
 		"NFT.sol": {
-			"keccak256": "0xf90edc471c3f1b837408e2ead5fb405619120b24f35b088d9c5e94b66b8cf7fc",
+			"keccak256": "0x2de968fe7dc83891c77c856ffb4bcd59ccee646b2d2a7e6946febbb260922863",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://92ece78fb0a6a8e3ad864538dabbe8047a3d6f7aa7dd27d60b80216444a3fc11",
-				"dweb:/ipfs/QmYaWr27wPaq7VYBoK1U3SukszaAHkrDAAzhQEpmgRpQFA"
+				"bzz-raw://df93c933c6805ccedcc8c13452a94ba93a2cac32b8538b5093873848288643c4",
+				"dweb:/ipfs/QmeG2gsnZDnQcUY2PpoipXbquf7aRori4atUMJsSTrdvP5"
 			]
 		}
 	},
