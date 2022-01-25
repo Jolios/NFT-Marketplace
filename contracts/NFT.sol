@@ -30,10 +30,8 @@ contract NFT is ERC721URIStorage {
         setApprovalForAll(contractAddress, true);
         return newItemId;
     }
-    function hasToPayRoyalties(address from,address artist)external {
-        if(excludedList[from] == false) {
-            payRoyalties(artist);
-        }
+    function hasToPayRoyalties(address from)external returns (bool) {
+        return excludedList[from] == false;
     }
     function transferToken(address from, address to, uint256 tokenId) external {
         require(ownerOf(tokenId) == from, "From address must be token owner");

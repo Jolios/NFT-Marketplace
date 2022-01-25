@@ -782,19 +782,19 @@
 			]
 		},
 		"Market.sol": {
-			"keccak256": "0x9d2d0a0a17f5019ff576f9a36f31744dd9b7c06dd0786cafc02f5e1cdc8be2b5",
+			"keccak256": "0x5ef9942f16326bbad0a6e8b6367595c9cc8338728d7ae330d6c9f5002e1c0593",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://ad6785d92fe121dc11028847cfcd19c22f4b1842962a29d5fb9f8d94e6abaee9",
-				"dweb:/ipfs/QmXwX7QZBFWdYK7W8Fwf5hpxmQefqWKb7bcTnvXQqPxb7T"
+				"bzz-raw://cb021b35d6d669f2f110a492242b45029572de80be03e56ad3a56df5441d2aa9",
+				"dweb:/ipfs/Qmce4irUj1PyU6JVu9s3BYW1ewKvchNezhBU1UVcVUDHof"
 			]
 		},
 		"NFT.sol": {
-			"keccak256": "0xec46f37e11d5911b00a9f1e767e9f9c9daca0e4342b1b56fed50d25a2ee851b6",
+			"keccak256": "0xcb0eedcb56628781e7fd8bc120db85161078a855bd0a33f4c03f8edee4f3eaf7",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://264e10dfadaa66151e435bc356418580d100c15b2ec17d2359d4b9c4a5fc2f4f",
-				"dweb:/ipfs/QmZ8w84ht8U9VAtnW1boHbaV8AJ9RaPz3NLx4SeECQd132"
+				"bzz-raw://3553854b0c8504652402757872ccb6bbf59eab7bc3ab1b9da8dfbf29117091a5",
+				"dweb:/ipfs/QmcZr3nczms8baoMKXeSi6S2whxp7crzhqtRcEEGX526hc"
 			]
 		}
 	},

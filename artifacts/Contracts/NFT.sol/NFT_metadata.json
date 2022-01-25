@@ -191,15 +191,16 @@
 						"internalType": "address",
 						"name": "from",
 						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "artist",
-						"type": "address"
 					}
 				],
 				"name": "hasToPayRoyalties",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -595,11 +596,11 @@
 			]
 		},
 		"NFT.sol": {
-			"keccak256": "0xec46f37e11d5911b00a9f1e767e9f9c9daca0e4342b1b56fed50d25a2ee851b6",
+			"keccak256": "0xcb0eedcb56628781e7fd8bc120db85161078a855bd0a33f4c03f8edee4f3eaf7",
 			"license": "MIT OR Apache-2.0",
 			"urls": [
-				"bzz-raw://264e10dfadaa66151e435bc356418580d100c15b2ec17d2359d4b9c4a5fc2f4f",
-				"dweb:/ipfs/QmZ8w84ht8U9VAtnW1boHbaV8AJ9RaPz3NLx4SeECQd132"
+				"bzz-raw://3553854b0c8504652402757872ccb6bbf59eab7bc3ab1b9da8dfbf29117091a5",
+				"dweb:/ipfs/QmcZr3nczms8baoMKXeSi6S2whxp7crzhqtRcEEGX526hc"
 			]
 		}
 	},

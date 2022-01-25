@@ -13,6 +13,7 @@ contract Market is ReentrancyGuard {
     Counters.Counter private _itemsIds;
     Counters.Counter private _itemsSold;
     Counters.Counter private _itemsDeleted;
+    uint256 royaltiesAmount = 0.001 ether;
 
     // owner of the marketplace
     address payable owner;
@@ -187,8 +188,10 @@ contract Market is ReentrancyGuard {
 
         idToMarketItem[itemId].seller.transfer(msg.value);
         NFT tokenContract = NFT(nftContract);
-        
-        tokenContract.hasToPayRoyalties(idToMarketItem[itemId].seller,idToMarketItem[itemId].creator);
+
+        if(tokenContract.hasToPayRoyalties(idToMarketItem[itemId].seller) == false){
+            idToMarketItem[itemId].seller.transfer(royaltiesAmount);
+        }
         IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
         
 
