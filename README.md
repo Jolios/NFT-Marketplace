@@ -1,9 +1,9 @@
 1. Clone the project locally, change into the directory, and install the dependencies:
 
 ```sh
-git clone https://github.com/dabit3/polygon-ethereum-nextjs-marketplace.git
+git clone https://github.com/Jolios/NFT-Marketplace.git
 
-cd polygon-ethereum-nextjs-marketplace
+cd NFT-Marketplace
 
 # install using NPM or Yarn
 npm install
