@@ -75,7 +75,7 @@ export default function CreateItem() {
 
     transaction = await contract.createMarketItem(nftaddress, tokenId, price, rightsPrice, { value: listingPrice })
     await transaction.wait()
-    router.push('/my-assets')
+    router.push('/creator-dashboard')
   }
 
   return (
